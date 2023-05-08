@@ -101,6 +101,19 @@
         </div>
 
         <div class="col-span-6 sm:col-span-4">
+            <x-label for="sport" value="{{ __('Sports') }}" />
+            <select id="sport" class="mt-1 block w-full" wire:model.defer="state.sport">
+                <option value="">>>Select<<</option>
+                <option value="Football">Football</option>
+                <option value="Basketball">Basketball</option>
+                <option value="Tennis">Tennis</option>
+                <option value="Bedminton">Bedminton</option>
+            </select>
+            <x-input-error for="price" class="mt-2" />
+        </div>
+
+
+        <div class="col-span-6 sm:col-span-4">
             <x-label for="price" value="{{ __('Price Nu:') }}" />
             <x-input id="price" type="number" step="0.01" class="mt-1 block w-full" wire:model.defer="state.price" autocomplete="price" />
             <x-input-error for="price" class="mt-2" />
@@ -124,17 +137,6 @@
             <x-input-error for="description" class="mt-2" />
         </div>
 
-        <div class="col-span-6 sm:col-span-4">
-            <x-label for="sport" value="{{ __('Sports') }}" />
-            <select id="sport" class="mt-1 block w-full" wire:model.defer="state.sport">
-                <option value="">>>Select<<</option>
-                <option value="Football">Football</option>
-                <option value="Basketball">Basketball</option>
-                <option value="Tennis">Tennis</option>
-                <option value="Bedminton">Bedminton</option>
-            </select>
-            <x-input-error for="price" class="mt-2" />
-        </div>
 
         <div class="col-span-6 sm:col-span-4">
             <x-label for="images" value="{{ __('Images') }}" />

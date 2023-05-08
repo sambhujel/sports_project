@@ -4,48 +4,42 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Submit;
-use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 class SubmitController extends Controller
 {
-    public function submit()
-    {
 
-        return view('book.submit');
-    }
     public function book(Request $request)
     {
-        $data=new submit;
 
+        $name = $request->submit;
+        $email = $request->email;
+        $phone = $request->number;
+        $date = $request->date;
+        $time = $request->time;
+        $sport = $request->sport;
+        $id = auth()->id()??1;
+        $user = User::find($id);
 
+        $data = new Submit();
 
-        $data->name=$request->submit;
-        $data->email=$request->email;
-        $data->phone=$request->number;
-        $data->date=$request->date;
-        $data->time=$request->time;
-        $data->sport=$request->sport;
+        $data->name = $name;
+        $data->email = $email;
+        $data->phone = $phone;
+        $data->date = $date;
+        $data->time = $time;
+        $data->sport = $sport;
+        $data->user_id = $id;
 
-        $data->user_id = $request->input('user_id');
 
         $data->save();
 
 
-
-
-        return redirect()->back();
-
-
+        return redirect("/book.submit");
     }
-
-
 
     public function books()
     {
-
         return view('book.submit');
     }
-
-
 }

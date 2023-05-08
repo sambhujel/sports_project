@@ -1,25 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    <base href="/public">
 
   <head>
-
-  <style>
-
-      .image {
-        margin-top: -380px;
-        width: 90%;
-        display: flex;
-        justify-content: right;
-        align-items: center;
-      }
-      .image img {
-        border-radius: 50%;
-        width: 250px;
-        height: 250px;
-      }
-    </style>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -62,7 +44,7 @@ https://templatemo.com/tm-546-sixteen-clothing
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="{{ route('welcome') }}"><h2>OS<em>FB</em>-Deatil</h2></a>
+          <a class="navbar-brand" href="{{ route('welcome') }}"><h2>OS<em>FB</em></h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -74,10 +56,10 @@ https://templatemo.com/tm-546-sixteen-clothing
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
+                <a class="nav-link" href="{{url('about')}}">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
+                <a class="nav-link" href="{{url('contact')}}">Contact Us</a>
               </li>
 
               <li class="nav-item">
@@ -90,66 +72,73 @@ https://templatemo.com/tm-546-sixteen-clothing
           </div>
         </div>
       </nav>
-    </header><br><br><br>
-
-        <div class="container-fluid page-body-wrapper">
-            <div class="container" align="leftside">
-                <h1 style="color:white; padding-top:25px; font-size:25px;">Detail Of Fields</h1>
+    </header>
 
 
-
-     <form action="{{url('submit')}}" method="POST" >
-    {{ csrf_field() }}
-    <div style="padding:15px;">
-        <label for="">Name:</label>
-        <input type="text" name="submit" required="" value="" style="color:black;">
-    </div>
-    <div style="padding:15px;">
-        <label for="">Email</label>
-        <input type="email" name="email" required="" value="" style="color:black;">
-    </div>
-    <div style="padding:15px;">
-        <label for="">Phone</label>
-        <input type="text" name="number" required="" value="" style="color:black;">
-    </div>
-    <div style="padding:15px;">
-        <label for="">Date</label>
-        <input type="date" name="date" required="" value="" style="color:black;">
-    </div>
-    <div style="padding:15px;">
-        <label for="">Time</label>
-        <input type="time" name="time" required="" value="" style="color:black;">
-    </div>
-    <div style="padding:15px;">
-        <label for="">Sport</label>
-        <input type="sport" name="sport" required="" value="" style="color:black;">
-    </div>
-
-    <div>
-        <input type="submit" class="btn btn-primary">
-    </div>
-</form>
+    <!-- Page Content -->
+    <div class="page-heading contact-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-content">
+              <h4>contact us</h4>
+              <h2>let’s get in touch</h2>
             </div>
+          </div>
         </div>
+      </div>
+    </div>
 
+
+    <div class="find-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Our Location on Maps</h2>
             </div>
-            <div class="container">
-                <div class="content">
+          </div>
+          <div class="col-md-8">
+<!-- How to change your own map point
+	1. Go to Google Maps
+	2. Click on your location point
+	3. Click "Share" and choose "Embed map" tab
+	4. Copy only URL and paste it within the src="" field below
+-->
+            <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.363232430742!2d91.46473019999999!3d26.860198399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375beb9567355685%3A0x1773e4413455284a!2sJigme%20Namgyel%20Engineering%20College%2C%20Samdrupjongkhar!5e0!3m2!1sen!2sbt!4v1683373072456!5m2!1sen!2sbt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="left-content">
+              <h4>About our website</h4>
+              <p>The College started with the infrastructure development in 1972 coinciding with the 3rd Five Year Development Plan of the country and the College was formally launched as the Royal Bhutan Polytechnic on 22rd February 1974.</p>
+              <ul class="social-icons">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                </div>
-                <div class="image">
-                    <img src="/assets/images/1.png" alt="">
-                </div>
-            </div><br><br><br><br>
+
+
+
+
+
 
     <footer>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="inner-content">
-              <p>Copyright &copy; 2020 Sixteen Clothing Co., Ltd.
+              <p>Have Fun Life; Jigme Namgyal Engering Collage.
 
-            - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+
             </div>
           </div>
         </div>
