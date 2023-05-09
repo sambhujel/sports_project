@@ -70,7 +70,10 @@ route::get('/updatead/{id}',[AdminController::class,'updatead']);
 route::get('/view',[AdminController::class,'view']);
 route::get('/deleteuser/{id}',[AdminController::class,'deleteuser']);
 route::get('/bview',[SadminController::class,'index']);
+
+
 route::get('/submit/{id}',[SubmitController::class,'books']);
+route::post('/submit',[SubmitController::class,'book']);
 
 
 
@@ -78,7 +81,6 @@ route::get('/submit/{id}',[SubmitController::class,'books']);
 
 route::post('/update/{id}',[AdminController::class,'update']);
 route::post('/upload_ad',[AdminController::class,'uploadad']);
-route::post('/book',[SubmitController::class,'book']);
 route::post('/submit',[SubmitController::class,'book']);
 
 

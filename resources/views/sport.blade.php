@@ -140,14 +140,15 @@ https://templatemo.com/tm-546-sixteen-clothing
         <div class="row">
           <div class="col-md-12">
             <div class="inner-content">
-              <p>Copyright &copy; 2020 Sixteen Clothing Co., Ltd.
+              <p>Have Fun Life; Jigme Namgyel Engineering College.
 
-            - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+
             </div>
           </div>
         </div>
       </div>
     </footer>
+
 
 
     <!-- Bootstrap core JavaScript -->

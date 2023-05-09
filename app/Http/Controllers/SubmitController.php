@@ -18,8 +18,7 @@ class SubmitController extends Controller
         $date = $request->date;
         $time = $request->time;
         $sport = $request->sport;
-        $id = auth()->id()??1;
-        $user = User::find($id);
+
 
         $data = new Submit();
 
@@ -29,17 +28,18 @@ class SubmitController extends Controller
         $data->date = $date;
         $data->time = $time;
         $data->sport = $sport;
-        $data->user_id = $id;
+        $data->user_id = $data;
 
 
         $data->save();
 
 
-        return redirect("/book.submit");
+        return view('book.submit');
     }
 
     public function books()
     {
-        return view('book.submit');
+        $data = User::all();
+        return view('book.submit')->with('data',$data);
     }
 }

@@ -136,7 +136,7 @@ https://templatemo.com/tm-546-sixteen-clothing
         <div class="row">
           <div class="col-md-12">
             <div class="inner-content">
-              <p>Have Fun Life; Jigme Namgyal Engering Collage.
+              <p>Have Fun Life; Jigme Namgyel Engineering College.
 
 
             </div>
@@ -144,6 +144,7 @@ https://templatemo.com/tm-546-sixteen-clothing
         </div>
       </div>
     </footer>
+
 
 
     <!-- Bootstrap core JavaScript -->

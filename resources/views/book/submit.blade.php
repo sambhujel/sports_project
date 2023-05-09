@@ -96,8 +96,6 @@ https://templatemo.com/tm-546-sixteen-clothing
             <div class="container" align="leftside">
                 <h1 style="color:white; padding-top:25px; font-size:25px;">Detail Of Fields</h1>
 
-
-
      <form action="{{url('submit')}}" method="POST" >
     {{ csrf_field() }}
     <div style="padding:15px;">
@@ -124,6 +122,10 @@ https://templatemo.com/tm-546-sixteen-clothing
         <label for="">Sport</label>
         <input type="sport" name="sport" required="" value="" style="color:black;">
     </div>
+
+    @foreach($data as $data)
+    <input type="hidden" name="owner_id" value="{{ $data->id }}">
+    @endforeach
 
     <div>
         <input type="submit" class="btn btn-primary">
