@@ -96,41 +96,43 @@ https://templatemo.com/tm-546-sixteen-clothing
             <div class="container" align="leftside">
                 <h1 style="color:white; padding-top:25px; font-size:25px;">Detail Of Fields</h1>
 
-     <form action="{{url('submit')}}" method="POST" >
-    {{ csrf_field() }}
-    <div style="padding:15px;">
-        <label for="">Name:</label>
-        <input type="text" name="submit" required="" value="" style="color:black;">
-    </div>
-    <div style="padding:15px;">
-        <label for="">Email</label>
-        <input type="email" name="email" required="" value="" style="color:black;">
-    </div>
-    <div style="padding:15px;">
-        <label for="">Phone</label>
-        <input type="text" name="number" required="" value="" style="color:black;">
-    </div>
-    <div style="padding:15px;">
-        <label for="">Date</label>
-        <input type="date" name="date" required="" value="" style="color:black;">
-    </div>
-    <div style="padding:15px;">
-        <label for="">Time</label>
-        <input type="time" name="time" required="" value="" style="color:black;">
-    </div>
-    <div style="padding:15px;">
-        <label for="">Sport</label>
-        <input type="sport" name="sport" required="" value="" style="color:black;">
-    </div>
-
-    @foreach($data as $data)
-    <input type="hidden" name="owner_id" value="{{ $data->id }}">
-    @endforeach
-
+                @foreach ($user->take(5) as $user)
     <div>
-        <input type="submit" class="btn btn-primary">
+        <p>User name: {{ $user->name }}</p>
+        <p>User email: {{ $user->email }}</p>
+
+        <form action="{{ url('/submit/'.$user->id) }}" method="POST">
+            @csrf
+            <input type="hidden" name="user_id" value="{{ $user->id }}">
+            <div style="padding:15px;">
+                <label for="">Name:</label>
+                <input type="text" name="submit" required="" value="" style="color:black;">
+            </div>
+            <div style="padding:15px;">
+                <label for="">Email</label>
+                <input type="email" name="email" required="" value="" style="color:black;">
+            </div>
+            <div style="padding:15px;">
+                <label for="">Phone</label>
+                <input type="text" name="number" required="" value="" style="color:black;">
+            </div>
+            <div style="padding:15px;">
+                <label for="">Date</label>
+                <input type="date" name="date" required="" value="" style="color:black;">
+            </div>
+            <div style="padding:15px;">
+                <label for="">Time</label>
+                <input type="time" name="time" required="" value="" style="color:black;">
+            </div>
+            <div style="padding:15px;">
+                <label for="">Sport</label>
+                <input type="sport" name="sport" required="" value="" style="color:black;">
+            </div>
+            <button type="submit">Book Now</button>
+        </form>
     </div>
-</form>
+@endforeach
+
             </div>
         </div>
 
@@ -149,9 +151,9 @@ https://templatemo.com/tm-546-sixteen-clothing
         <div class="row">
           <div class="col-md-12">
             <div class="inner-content">
-              <p>Copyright &copy; 2020 Sixteen Clothing Co., Ltd.
+              <p>Have Fun Life; Jigme Namgyel Engineering College.
 
-            - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+
             </div>
           </div>
         </div>

@@ -73,7 +73,7 @@ route::get('/bview',[SadminController::class,'index']);
 
 
 route::get('/submit/{id}',[SubmitController::class,'books']);
-route::post('/submit',[SubmitController::class,'book']);
+Route::post('/submit/{user_id}', [SubmitController::class, 'book'])->name('book.submit');
 
 
 

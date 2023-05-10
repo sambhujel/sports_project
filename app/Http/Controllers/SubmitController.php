@@ -9,37 +9,34 @@ use App\Models\User;
 class SubmitController extends Controller
 {
 
-    public function book(Request $request)
+
+    public function book(Request $request, $id)
     {
+        $name = $request->input('submit');
+        $email = $request->input('email');
+        $phone = $request->input('number');
+        $date = $request->input('date');
+        $time = $request->input('time');
+        $sport = $request->input('sport');
+        $user_id = $request->input('user_id');
 
-        $name = $request->submit;
-        $email = $request->email;
-        $phone = $request->number;
-        $date = $request->date;
-        $time = $request->time;
-        $sport = $request->sport;
+        $submit = new Submit;
+        $submit->name = $name;
+        $submit->email = $email;
+        $submit->phone = $phone;
+        $submit->date = $date;
+        $submit->time = $time;
+        $submit->sport = $sport;
+        $submit->user_id = $user_id;
+        $submit->save();
 
-
-        $data = new Submit();
-
-        $data->name = $name;
-        $data->email = $email;
-        $data->phone = $phone;
-        $data->date = $date;
-        $data->time = $time;
-        $data->sport = $sport;
-        $data->user_id = $data;
-
-
-        $data->save();
-
-
-        return view('book.submit');
+        return redirect()->back()->with('success', 'Booking successful');
     }
+
 
     public function books()
     {
-        $data = User::all();
-        return view('book.submit')->with('data',$data);
+        $user = User::all();
+        return view('book.submit', ['user' => $user])->with('user', $user);
     }
 }
