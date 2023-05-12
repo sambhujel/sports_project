@@ -90,6 +90,12 @@ route::post('/submit',[SubmitController::class,'book']);
 
 
 route::get('/view',[SadaminController::class,'index']);
-route::get('/client',[SadaminController::class,'client']);
 route::get('/modify',[SadaminController::class,'modify']);
-route::get('/deleteclient/{user_id}',[SadaminController::class,'deleteclient']);
+Route::get('/delete/{id}', [SadaminController::class, 'delete']);
+
+Route::get('/modify', [SadaminController::class, 'modify'])->name('modify');
+Route::get('update/{id}', [SadaminController::class, 'edit'])->name('update');
+Route::put('/update/{id}', [SadaminController::class, 'update'])->name('update.post');
+
+
+
