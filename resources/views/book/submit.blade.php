@@ -96,14 +96,15 @@ https://templatemo.com/tm-546-sixteen-clothing
             <div class="container" align="leftside">
                 <h1 style="color:white; padding-top:25px; font-size:25px;">Detail Of Fields</h1>
 
-                @foreach ($user->take(5) as $user)
-    <div>
-        <p>User name: {{ $user->name }}</p>
-        <p>User email: {{ $user->email }}</p>
+            </div>
 
+                @foreach ($user as $user)
+    <div>
+        @if ($user->usertype == 0)
         <form action="{{ url('/submit/'.$user->id) }}" method="POST">
             @csrf
             <input type="hidden" name="user_id" value="{{ $user->id }}">
+
             <div style="padding:15px;">
                 <label for="">Name:</label>
                 <input type="text" name="submit" required="" value="" style="color:black;">
@@ -130,6 +131,7 @@ https://templatemo.com/tm-546-sixteen-clothing
             </div>
             <button type="submit">Book Now</button>
         </form>
+        @endif
     </div>
 @endforeach
 

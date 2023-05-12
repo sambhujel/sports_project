@@ -12,7 +12,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<<<<<<< HEAD
     <title>Online Sport Field Booking</title>
+=======
+    <title>Admin</title>
+>>>>>>> c79b4bafb5ea4ab874494c1d18fe0aebf3882129
     <!-- plugins:css -->
     <link rel="stylesheet" href="admin/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="admin/assets/vendors/css/vendor.bundle.base.css">
