@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\View;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SubmitController;
-use App\Http\Controllers\SadminController;
+use App\Http\Controllers\SadaminController;
 use App\Models\Ad;
 use App\Models\User;
 use App\Models\Submit;
@@ -51,6 +51,8 @@ Route::get('/book/{id}', function ($id) {
     return view('book', compact('data'));
 });
 
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -69,11 +71,13 @@ route::get('/delete/{id}',[AdminController::class,'delete']);
 route::get('/updatead/{id}',[AdminController::class,'updatead']);
 route::get('/view',[AdminController::class,'view']);
 route::get('/deleteuser/{id}',[AdminController::class,'deleteuser']);
-route::get('/bview',[SadminController::class,'index']);
+
+
+
 
 
 route::get('/submit/{id}',[SubmitController::class,'books']);
-Route::post('/submit/{user_id}', [SubmitController::class, 'book'])->name('book.submit');
+Route::post('/submit/{user_id}', [SubmitController::class, 'book'])->name('submit.book');
 
 
 
@@ -85,3 +89,7 @@ route::post('/submit',[SubmitController::class,'book']);
 
 
 
+route::get('/view',[SadaminController::class,'index']);
+route::get('/client',[SadaminController::class,'client']);
+route::get('/modify',[SadaminController::class,'modify']);
+route::get('/deleteclient/{user_id}',[SadaminController::class,'deleteclient']);
