@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SubmitController;
 use App\Http\Controllers\SadminController;
+
 use App\Models\Ad;
 use App\Models\User;
 use App\Models\Submit;
@@ -40,6 +41,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+});
+
 Route::get('/search', function (Illuminate\Http\Request $request) {
     $search = $request->search;
     $data = user::where('name', 'like', '%' . $search . '%')->orwhere('address','like','%'.$search.'%')->orwhere('phone','like','%'.$search.'%')->orwhere('email','like','%'.$search.'%')->orwhere('sport','like','%'.$search.'%')->orwhere('price','like','%'.$search.'%')->get();
@@ -70,18 +75,22 @@ route::get('/updatead/{id}',[AdminController::class,'updatead']);
 route::get('/view',[AdminController::class,'view']);
 route::get('/deleteuser/{id}',[AdminController::class,'deleteuser']);
 route::get('/bview',[SadminController::class,'index']);
+route::get('/approval',[AdminController::class,'approval']);
 
-
+route::get('/subadd',[AdminController::class,'subadd']);
 route::get('/submit/{id}',[SubmitController::class,'books']);
+
+route::get('/approved/{id}',[AdminController::class,'approved']);
+route::get('/canceled/{id}',[AdminController::class,'canceled']);
+
+
+
 Route::post('/submit/{user_id}', [SubmitController::class, 'book'])->name('book.submit');
-
-
-
-
-
 route::post('/update/{id}',[AdminController::class,'update']);
 route::post('/upload_ad',[AdminController::class,'uploadad']);
-route::post('/submit',[SubmitController::class,'book']);
+route::post('/upload_subadmin',[AdminController::class,'uploadsub']);
+
+
 
 
 

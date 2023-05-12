@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ad;
 use App\Models\User;
+use App\Models\Subadmin;
 
 class AdminController extends Controller
 {
@@ -62,7 +63,7 @@ class AdminController extends Controller
     {
         $data=new ad;
 
-        $image=$request->file;
+        $image=$request->file('file');
         $imagename=time().'.'.$image->getClientOriginalExtension();
         $request->file->move('adimage',$imagename);
 
@@ -92,5 +93,56 @@ class AdminController extends Controller
         return redirect()->back()->with('message','Sub-Admin is successfuly Deleted');
     }
 
+
+
+    public function subadd()
+    {
+        return view('admin.subadd');
+    }
+
+public function uploadsub(Request $request)
+    {
+        $data=new subadmin;
+
+
+        $data->name=$request->name;
+        $data->CID=$request->CID;
+        $data->Email=$request->Email;
+        $data->phone_number=$request->phone_number;
+
+        $data->save();
+
+        return redirect()->back()->with('message','subAdmin is successfuly added');
+
+    }
+
+    public function approval()
+    {
+        $data=user::all();
+        return view('admin.approval',compact('data'));
+        
+    }
+
+    public function approved($id)
+    {
+        $data=user::find($id);
+        $data->status='approved';
+
+        if($data=='approved')
+
+        $data->save();
+
+        return view('sadmin')->back();
+
+    }
+    public function canceled($id)
+    {
+        $data=user::find($id);
+        $data->status='canceled';
+        $data->save();
+
+        return redirect()->back();
+
+    }
 
 }

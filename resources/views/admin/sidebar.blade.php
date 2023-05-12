@@ -10,6 +10,15 @@
             <span class="nav-link">Navigation</span>
           </li>
 
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('subadd')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-contacts"></i>
+              </span>
+              <span class="menu-title"> Add_Subadmin</span>
+            </a>
+          </li>
+
 
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{url('view')}}">
@@ -36,6 +45,18 @@
               <span class="menu-title">Delete and Update Add</span>
             </a>
           </li>
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('approval')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-contacts"></i>
+              </span>
+              <span class="menu-title">Approval</span>
+            </a>
+          </li>
+          
+          
+          
 
 
         </ul>

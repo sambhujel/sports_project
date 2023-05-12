@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Online Sport Field Booking</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="admin/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="admin/assets/vendors/css/vendor.bundle.base.css">
@@ -42,7 +42,7 @@
                 {{session()->get('message')}}
                 </div>
                 @endif
-                <h1 style="color:white; padding-top:25px; font-size:25px;">Delete Add</h1>
+                <h1 style="color:white; padding-top:25px; font-size:25px;">Delete subadmin account</h1>
                 <table style="width: 100%;">
 
                 <tr style ="background-color:gray;">

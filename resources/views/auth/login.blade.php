@@ -6,10 +6,11 @@
 
         <x-validation-errors class="mb-4" />
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
+        </p>
+        @if(session()->has('message'))
+            <p class="alert alert-info">
+                {{ session()->get('message') }}
+            </p>
         @endif
 
         <form method="POST" action="{{ route('login') }}">

@@ -69,8 +69,6 @@
                         <textarea id="des" name="des" required style="color:black;"></textarea>
                     </div>
 
-
-
                     <div style="padding:15px;">
                         <input type="file" name="file" require="" >
                     </div>
