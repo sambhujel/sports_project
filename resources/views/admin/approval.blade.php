@@ -38,7 +38,7 @@
         <!-- partial:partials/_navbar.html -->
         @include('admin.naver')
         <!-- partial -->
-        <div class="container-fluid page-body-wrapper">
+        <div class="">
             <div class="container" align="center">
             @if(session()->has('message'))
                 <div class="alert alert-success">
@@ -46,32 +46,34 @@
                 {{session()->get('message')}}
                 </div>
                 @endif
-                <h1 style="color:white; padding-top:25px; font-size:25px;">Delete Add</h1>
-                <table style="width: 100%;">
+                <h1 style="color:white; padding-top:20px; font-size:20px;">Approval subadmin</h1>
+                <table style="width: 70%; height: 70%">
 
                 <tr style ="background-color:green;">
                     <td style="padding: 10px;">name</td>
-                    <td style="padding: 10px;">usertype</td>
+                  
                     <td style="padding: 10px;">email</td>
                     <td style="padding: 10px;">phone</td>
                     <td style="padding: 10px;">sport</td>
                     <td style="padding: 10px;">status</td>
                     <td style="padding: 10px;">Approved</td>
                     <td style="padding: 10px;">Cancel</td>
+                    <td style="padding: 10px;">Send Mail</td>
 
                 </tr>
                 
                 @foreach($data as $data)
-                <tr align="center" style ="background-color:black">
-                    <td style="padding-top: 10px;">{{$data->name}}</td>
-                    <td style="padding: 10px;">{{$data->usertype}}</td>
+                <tr align="left" style ="background-color:black">
+                    <td style="padding: 10px;">{{$data->name}}</td>
+                    
                     <td style="padding: 10px;">{{$data->email}}</td>
                     <td style="padding: 10px;">{{$data->phone}}</td>
                     <td style="padding: 10px;">{{$data->sport}}</td>
                     <td style="padding: 10px;">{{$data->status}}</td>
 
-                    <td style="padding: 10px;"> <a href="{{url('approved',$data->id)}}" onclick="return confirm('Are You sure?')" class="btn btn-primary">approved</a></td>
-                    <td style="padding: 10px;"> <a href="{{url('canceled',$data->id)}}" onclick="return confirm('Are You sure?')" class="btn btn-danger">canceled</a></td>
+                    <td style="padding: 10px;"> <a href="{{url('approved',$data->id)}}" onclick="return confirm('Are You sure,you want to approved?')" class="btn btn-success">approved</a></td>
+                    <td style="padding: 10px;"> <a href="{{url('canceled',$data->id)}}" onclick="return confirm('Are You sure,you want to cancled?')" class="btn btn-danger">canceled</a></td>
+                    <td style="padding: 10px;"> <a href="{{url('email',$data->id)}}" onclick="return confirm('Are You sure,you want to send mail?')" class="btn btn-primary">SendMail</a></td>
                 </tr>
              @endforeach
                 </table>

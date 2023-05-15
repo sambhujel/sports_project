@@ -92,9 +92,8 @@ https://templatemo.com/tm-546-sixteen-clothing
                     <td style="padding: 20px;">Phone</td>
                     <td style="padding: 20px;">Sport</td>
                     <td style="padding: 20px;">Price Nu:</td>
-                    <td style="padding: 20px;">Opening</td>
-                    <td style="padding: 20px;">Closing</td>
                     <td style="padding: 20px;">Description</td>
+                    <td style="padding: 20px;"></td>
                     <td style="padding: 20px;">Action</td>
                 </tr>
 
@@ -106,7 +105,6 @@ https://templatemo.com/tm-546-sixteen-clothing
                     <td style="padding: 20px; color:white">{{$data->phone}}</td>
                     <td style="padding: 20px; color:white">{{$data->sport}}</td>
                     <td style="padding: 20px; color:white">{{$data->price}}/-</td>
-                    <td style="padding: 20px; color:white">{{$data->time}}</td>
                     <td style="padding: 20px; color:white">{{$data->time}}</td>
                     <td style="padding: 20px; color:white">{{$data->description}}</td>
                     <td style="padding: 20px;"> <a href="{{url('submit',$data->id)}}" class="btn btn-primary">Book</a></td>

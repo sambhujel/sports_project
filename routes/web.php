@@ -5,12 +5,8 @@ use Illuminate\Support\Facades\View;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SubmitController;
-<<<<<<< HEAD
-use App\Http\Controllers\SadminController;
-
-=======
 use App\Http\Controllers\SadaminController;
->>>>>>> c79b4bafb5ea4ab874494c1d18fe0aebf3882129
+use App\Http\Controllers\Auth\RegisterController;
 use App\Models\Ad;
 use App\Models\User;
 use App\Models\Submit;
@@ -80,38 +76,22 @@ route::get('/delete/{id}',[AdminController::class,'delete']);
 route::get('/updatead/{id}',[AdminController::class,'updatead']);
 route::get('/view',[AdminController::class,'view']);
 route::get('/deleteuser/{id}',[AdminController::class,'deleteuser']);
-<<<<<<< HEAD
 route::get('/bview',[SadminController::class,'index']);
 route::get('/approval',[AdminController::class,'approval']);
-=======
-
-
-
->>>>>>> c79b4bafb5ea4ab874494c1d18fe0aebf3882129
 
 route::get('/subadd',[AdminController::class,'subadd']);
 route::get('/submit/{id}',[SubmitController::class,'books']);
-<<<<<<< HEAD
 
 route::get('/approved/{id}',[AdminController::class,'approved']);
 route::get('/canceled/{id}',[AdminController::class,'canceled']);
-
+route::get('/email/{id}',[AdminController::class,'email']);
 
 
 Route::post('/submit/{user_id}', [SubmitController::class, 'book'])->name('book.submit');
-=======
-Route::post('/submit/{user_id}', [SubmitController::class, 'book'])->name('submit.book');
-
-
-
-
-
->>>>>>> c79b4bafb5ea4ab874494c1d18fe0aebf3882129
 route::post('/update/{id}',[AdminController::class,'update']);
 route::post('/upload_ad',[AdminController::class,'uploadad']);
 route::post('/upload_subadmin',[AdminController::class,'uploadsub']);
-
-
+route::post('/sendemail/{id}',[AdminController::class,'sendemail']);
 
 
 
@@ -123,5 +103,10 @@ Route::get('/modify', [SadaminController::class, 'modify'])->name('modify');
 Route::get('update/{id}', [SadaminController::class, 'edit'])->name('update');
 Route::put('/update/{id}', [SadaminController::class, 'update'])->name('update.post');
 
+
+
+Route::middleware(['auth', 'approved'])->group(function () {
+    Route::get('/dashboard', [sadminController::class, 'index'])->name('dashboard');
+});
 
 

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Ad;
 use App\Models\User;
 use App\Models\Subadmin;
+use Notification;
+use App\Notifications\SendEmailNotification;
 
 class AdminController extends Controller
 {
@@ -127,14 +129,13 @@ public function uploadsub(Request $request)
     {
         $data=user::find($id);
         $data->status='approved';
-
-        if($data=='approved')
-
         $data->save();
 
-        return view('sadmin')->back();
+        return redirect()->back();
 
     }
+
+
     public function canceled($id)
     {
         $data=user::find($id);
@@ -145,4 +146,26 @@ public function uploadsub(Request $request)
 
     }
 
+
+    public function email($id)
+    {
+        $data=user::find($id);
+        return view('admin.email',compact('data'));
+    }
+
+    public function sendemail(Request $request,$id)
+    {
+
+        $data=user::find($id);
+        $details=[
+            'greeting' => $request->greeting,
+            'body' => $request->body,
+            'endpart' => $request->endpart
+
+        ];
+
+        Notification::send($data,new SendEmailNotification($details));
+
+        return redirect()->back();
+    }
 }

@@ -35,6 +35,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'images',
         'description',
         'time',
+        'status',
     ];
 
     public function submits()

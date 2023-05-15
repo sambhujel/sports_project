@@ -30,6 +30,13 @@ https://templatemo.com/tm-546-sixteen-clothing
   </head>
 
   <body>
+  @if (session('status'))
+    <div class="mb-4 font-medium text-sm text-green-600">
+        {{ session('status') }}
+    </div>
+@endif
+
+
 
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">
